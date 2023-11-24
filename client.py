@@ -30,8 +30,12 @@ while True:
         rec_message=s.recv(1024)
         rec_message=rec_message.decode()
         print("Server says: ", rec_message)
-    elif command=='BYE':
+    elif command=="BYE":
+        client_message=command
+        client_message=client_message.encode()
+        s.send(client_message)
         s.close()
         break
+        exit()
     else:
         print("Invalid command")

@@ -38,8 +38,9 @@ while True:
         result= str(result)
         result= result.encode()
         client_sock.send(result)
-    elif clientmessage=="BYE":   
+    elif clientmessage=="BYE":
         client_sock.close()
+        s.close()
         break
     else:
         print("Invalid command")
